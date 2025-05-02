@@ -1,25 +1,23 @@
 import React from 'react';
-import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
+import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import portfolioProj from '../../data/portfolio/index';
 
-// Import Swiper styles
 import './swiper.css';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css/bundle';
 
 const Projects = () => {
   return (
     <div className='portfolio__content'>
       <Swiper
-        loop={true}
-        cssMode={true}
-        navigation={true}
-        pagination={true}
-        mousewheel={true}
-        keyboard={true}
+        loop
+        cssMode
+        navigation
+        pagination
+        mousewheel
+        keyboard
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className='product-images-slider'
       >
