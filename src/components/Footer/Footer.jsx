@@ -1,6 +1,4 @@
-import React from 'react';
 import './footer.css';
-import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 
 export const Footer = () => {
   return (
