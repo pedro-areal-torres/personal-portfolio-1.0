@@ -8,10 +8,10 @@ import './experience.css';
 
 export const Experience = () => {
   return (
-    <>
+    <section id='experience'>
       <Section title='Experience as Developer' experiences={workExperience} />
       <Section title='Experience as IT Instructor' experiences={instructorExperience} />
-    </>
+    </section>
   );
 };
 
@@ -22,7 +22,7 @@ const Section = ({ title, experiences }) => (
       <div className='experience__sections'>
         <div className='experience__content' id='work'>
           {experiences.map((exp, index) => (
-            <ExperienceItem key={index} data={exp} isOdd={index % 2 === 1} />
+            <ExperienceItem key={index} data={exp} isOdd={index % 2 === 1} index={index} />
           ))}
         </div>
       </div>
@@ -30,7 +30,7 @@ const Section = ({ title, experiences }) => (
   </section>
 );
 
-const ExperienceItem = ({ data, isOdd }, index) => {
+const ExperienceItem = ({ data, isOdd, index }) => {
   const { logo, title, company, link, duration } = data;
   return (
     <div className='experience__data'>
@@ -46,7 +46,7 @@ const ExperienceItem = ({ data, isOdd }, index) => {
 
       {/* Right-aligned content for even items */}
       {!isOdd && (
-        <ExperienceContent logo={logo} title={title} company={company} link={link} duration={duration} index={index} />
+        <ExperienceContent logo={logo} title={title} company={company} link={link} duration={duration} index={index+1} />
       )}
     </div>
   );
